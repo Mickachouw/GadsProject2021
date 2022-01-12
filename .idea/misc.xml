@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1639230219125.xml" value="1.0" />
+        <entry key="../../../../layout/compose-model-1639302780127.xml" value="0.13437897414158542" />
+        <entry key="../../../../layout/compose-model-1639302958467.xml" value="0.13437897414158542" />
+        <entry key="app/src/main/res/drawable/ic_outline_insights_24.xml" value="0.15625" />
+        <entry key="app/src/main/res/drawable/ic_outline_local_movies_24.xml" value="0.15625" />
+        <entry key="app/src/main/res/drawable/ic_outline_search_24.xml" value="0.15625" />
+        <entry key="app/src/main/res/drawable/ic_outline_waves_24.xml" value="0.15625" />
+        <entry key="app/src/main/res/font/lato.xml" value="1.0" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3452914798206278" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_splash_screen2.xml" value="0.14010416666666667" />
+        <entry key="app/src/main/res/layout/blank_fragment.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_asset_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_item.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.375" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.14010416666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+
+H
+app/google-services.json,f/d/fd8d34b142d02ec743a8efefefd2c097961666e9
+?
+settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
+A
+gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+â
+Yapp/src/main/java/com/mickachouw/gadsproject2021/views/activities/SplashScreenActivity.kt,7/5/7544534f666837b22a2168e0ac088bcac8e450cc
+Å
+Qapp/src/main/java/com/mickachouw/gadsproject2021/views/activities/MainActivity.kt,3/d/3d0a46a0f08f6e82dc21e09659a73c8cfc6737db
+å
+\app/src/main/java/com/mickachouw/gadsproject2021/views/fragments/AssetRecyclerViewAdapter.kt,8/6/8610b4ee8f0bc3556ccca7b3ec188cbd923143ec
+Å
+Qapp/src/main/java/com/mickachouw/gadsproject2021/data/repository/AssetDatabase.kt,2/0/207c01a9dab116e3d7d3a2a9eff5aca6e099e679
+Ö
+Uapp/src/main/java/com/mickachouw/gadsproject2021/views/fragments/ListAssetFragment.kt,1/c/1c1930db2739c1dd9fb8f927c747d2cfaea16fce

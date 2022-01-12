@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/list_item">
+    <fragment
+        android:id="@+id/list_item"
+        android:name="com.mickachouw.gadsproject2021.views.fragments.ListAssetFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list"
+        >
+        <action
+            android:id="@+id/action_list_item_to_asset_detail"
+            app:destination="@id/asset_detail"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/list_item"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment android:id="@+id/asset_detail"
+        android:name="com.mickachouw.gadsproject2021.views.fragments.AssetDetailFragment"
+        tools:layout="@layout/fragment_asset_detail"
+        android:label="fragment_asset_detail">
+        <argument
+            android:name="asset_id"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
