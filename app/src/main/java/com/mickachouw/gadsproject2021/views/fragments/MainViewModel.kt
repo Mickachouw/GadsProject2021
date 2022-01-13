@@ -30,9 +30,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             assetDAO.insertAssets(assets)
 
             // publish Assets to LiveData
-            for (asset in assets) {
-                liveAsset.postValue(asset)
-            }
+            for (asset in assets) liveAsset.postValue(asset)
         }
     }
 }

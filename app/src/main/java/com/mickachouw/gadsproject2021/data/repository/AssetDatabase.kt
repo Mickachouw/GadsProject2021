@@ -8,7 +8,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.mickachouw.gadsproject2021.data.repository.models.Asset
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import kotlin.coroutines.CoroutineContext
 
 //Annotates class to be a Room Database with a table (entity) of the Asset class
 @Database(entities = [Asset::class], version = 1, exportSchema = false)
@@ -28,8 +27,6 @@ abstract class AssetRoomDatabase : RoomDatabase() {
         }
 
         suspend fun populateDatabase(assetDao: AssetDAO) {
-            // Delete all content here
-//            assetDao.deleteAll(asse)
 
             // Add sample assets.
             var asset = Asset(

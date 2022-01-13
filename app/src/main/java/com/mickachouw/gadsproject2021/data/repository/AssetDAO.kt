@@ -4,7 +4,6 @@ package com.mickachouw.gadsproject2021.data.repository
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.mickachouw.gadsproject2021.data.repository.models.Asset
-//import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AssetDAO {

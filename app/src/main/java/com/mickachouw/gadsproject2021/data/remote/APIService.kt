@@ -8,12 +8,11 @@ import retrofit2.http.Headers
 import retrofit2.http.Path
 
 interface APIService {
-    @Headers("X-CoinAPI-Key: 9AE6AE9F-3C27-4048-B757-96C89DEAF7AC")
+    @Headers("X-CoinAPI-Key: ---")
     @GET("assets/")
-//    suspend fun getAllAssets(): Response<List<Asset>>
     suspend fun getAllAssets(): List<Asset>
 
-    @Headers("X-CoinAPI-Key: 9AE6AE9F-3C27-4048-B757-96C89DEAF7AC")
+    @Headers("X-CoinAPI-Key: ---")
     @GET("assets/{asset_id}")
     suspend fun getAsset(@Path("asset_id") assetID: String?): Asset
 

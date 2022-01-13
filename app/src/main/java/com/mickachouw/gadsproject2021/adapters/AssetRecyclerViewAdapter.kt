@@ -66,9 +66,6 @@ class AssetRecyclerViewAdapter(
                     transformations(CircleCropTransformation(), RoundedCornersTransformation())
                 }
                 cardView.setOnClickListener() {
-//                    val navHostFragment =
-//                        supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-//                    val navController = navHostFragment.navController
                     val action =
                         ListAssetFragmentDirections
                             .actionListItemToAssetDetail(current.assetId)

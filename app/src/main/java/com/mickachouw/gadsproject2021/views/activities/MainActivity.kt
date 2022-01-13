@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import coil.load
 import com.mickachouw.gadsproject2021.R
-import com.mickachouw.gadsproject2021.data.remote.APIService
 import com.mickachouw.gadsproject2021.data.remote.NetworkUtils
 import com.mickachouw.gadsproject2021.data.remote.RetrofitClient
 import com.mickachouw.gadsproject2021.data.repository.AssetRoomDatabase

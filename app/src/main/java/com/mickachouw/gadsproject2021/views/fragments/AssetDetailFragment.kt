@@ -20,8 +20,6 @@ class AssetDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val assetID = arguments?.getString("assetID")
-        // TODO
-//        val asset: Asset = List<Asset>().getAsset(assetID)
         val asset =
             Asset(
                 "ETH",
@@ -39,7 +37,6 @@ class AssetDetailFragment : Fragment() {
         val assetSigle: TextView = view.findViewById(R.id.asset_sigle)
         val assetValue: TextView = view.findViewById(R.id.asset_value)
         val assetImage: ImageView = view.findViewById(R.id.assetImageView)
-//            val cryptoVariation : TextView = itemView.findViewById(R.id.crypto_variation)
 
         assetName.text = asset.name
         assetSigle.text = asset.assetId
