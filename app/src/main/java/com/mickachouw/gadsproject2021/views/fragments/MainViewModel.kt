@@ -1,81 +1,38 @@
 package com.mickachouw.gadsproject2021.views.fragments
 
-import android.content.Context
-import android.util.Log
-import android.widget.Toast
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-//import com.mickachouw.gadsproject2021.data.remote.APIService
-import com.mickachouw.gadsproject2021.data.remote.RetrofitClient
 import com.mickachouw.gadsproject2021.data.remote.RetrofitClient.apiService
-import com.mickachouw.gadsproject2021.data.repository.AssetDAO
 import com.mickachouw.gadsproject2021.data.repository.AssetRoomDatabase
 import com.mickachouw.gadsproject2021.data.repository.models.Asset
-import com.mickachouw.gadsproject2021.views.activities.MainActivity
-import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val errorMessage = MutableLiveData<String>()
-    private val browsed = MutableLiveData<List<Asset>>()
-    private var job: Job? = null
+    private val assetDAO = AssetRoomDatabase.getDatabase(application, viewModelScope).assetDao()
 
-//    private var browsed: List<Asset> = mutableListOf()
+    // LiveData which will be observed by UI class (Activity) for new Quote
+    val liveAsset = MutableLiveData<Asset>()
 
-    private val loading = MutableLiveData<Boolean>()
+    init {
+        // fetches Assets when ViewModel object is create
+        getAllAssetsAndSaveIntoRoom()
+    }
 
-    private fun getAllAssets() {
-        job = CoroutineScope(Dispatchers.IO).launch {
-            val response = apiService.getAllAssets()
-            withContext(Dispatchers.Main) {
-                if (response.isSuccessful) {
-                    val listAsset = response.body()!!
-                    browsed.postValue(response.body())
-                    val db = AssetRoomDatabase.getDatabase(this@MainActivity, MainScope())
-                    for (asset in listAsset) db.assetDao().insertAsset(asset)
-                    db.close()
-                    loading.value = false
-                } else {
-                   onError("Error : ${response.message()} ")
-                }
-                }
-
-            }
-
-        }
-
-    private fun getAllAssetsAndSaveIntoRoom() {
+    fun getAllAssetsAndSaveIntoRoom() {
         viewModelScope.launch {
             // fetch Assets from REST API
             val assets = apiService.getAllAssets()
 
-            // save assets in db
-            AssetDAO.insertAssets(assets)
+            // save Assets in db
+            assetDAO.insertAssets(assets)
 
+            // publish Assets to LiveData
             for (asset in assets) {
-                AssetDAO.insertAsset()
+                liveAsset.postValue(asset)
             }
-            // publish quote to LiveData
-            liveQuote.postValue(quote)
         }
     }
-
-
-    private fun onError(message: String) {
-        errorMessage.value = message
-        loading.value = false
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
-    }
-    fun Context.toast(msg: String, duration: Int = Toast.LENGTH_SHORT) {
-        Toast.makeText(this, msg, duration).show()
-    }
-
 }

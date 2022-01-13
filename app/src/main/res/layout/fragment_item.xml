@@ -6,100 +6,98 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="?android:attr/listDivider" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/assetImageView"
+                android:layout_width="116dp"
+                android:layout_height="108dp"
+                android:maxHeight="50dp"
+                tools:srcCompat="@tools:sample/avatars[2]" />
+
+            <TextView
+                android:id="@+id/asset_name"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="BitCoin"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/asset_value"
+                app:layout_constraintHorizontal_bias="0.11"
+                app:layout_constraintStart_toEndOf="@+id/assetImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.32999998" />
+
+            <TextView
+                android:id="@+id/asset_sigle"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/lora_italic"
+                android:text="BTC"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/primaryDarkColor"
+                android:textColorHighlight="@color/primaryDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/asset_variation"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toEndOf="@+id/assetImageView"
+                app:layout_constraintTop_toBottomOf="@+id/asset_name" />
+
+            <TextView
+                android:id="@+id/asset_value"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/lato_black"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="9000.00"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/primaryDarkColor"
+                android:textColorHighlight="@color/primaryDarkColor"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <TextView
+                android:id="@+id/asset_variation"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/lora_medium_italic"
+                android:gravity="right|center_horizontal|center_vertical"
+                android:paddingEnd="16dp"
+                android:text="+1,6%"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/primaryDarkColor"
+                android:textColorHighlight="@color/primaryDarkColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/asset_name"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/lato_bold"
-        android:text="BitCoin"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/assetImageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/assetImageView"
-        android:layout_width="126dp"
-        android:layout_height="126dp"
-        android:maxHeight="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="8dp"
-        tools:srcCompat="@tools:sample/avatars[2]" />
-
-    <TextView
-        android:id="@+id/asset_sigle"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/lora_italic"
-        android:text="BTC"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textColor="@color/primaryDarkColor"
-        android:textColorHighlight="@color/primaryDarkColor"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/assetImageView"
-        app:layout_constraintTop_toBottomOf="@+id/asset_name"
-        app:layout_constraintVertical_bias="0.179" />
-
-    <TextView
-        android:id="@+id/asset_value"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lato_black"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="9000.00"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textColor="@color/primaryDarkColor"
-        android:textColorHighlight="@color/primaryDarkColor"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toEndOf="@+id/asset_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
-
-    <TextView
-        android:id="@+id/asset_variation"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/lora_medium_italic"
-        android:gravity="right|center_horizontal|center_vertical"
-        android:paddingEnd="16dp"
-        android:text="+1,6%"
-        android:textAppearance="?attr/textAppearanceListItem"
-        android:textColor="@color/primaryDarkColor"
-        android:textColorHighlight="@color/primaryDarkColor"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toEndOf="@+id/asset_sigle"
-        app:layout_constraintTop_toBottomOf="@+id/asset_value" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

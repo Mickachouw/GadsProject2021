@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/list_item">
+
     <fragment
         android:id="@+id/list_item"
         android:name="com.mickachouw.gadsproject2021.views.fragments.ListAssetFragment"

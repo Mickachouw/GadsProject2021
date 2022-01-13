@@ -12,7 +12,7 @@ interface AssetDAO {
     suspend fun insertAsset(asset: Asset) : Long
 
     @Insert (onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAssets(asset: List<Asset>) : Long
+    suspend fun insertAssets(asset: List<Asset>) : Array<Long>
 
     @Query("SELECT * FROM asset_database WHERE assetId LIKE :assetID")
     fun findByAssetID(assetID: String): Asset
